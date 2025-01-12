@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import PaginaBase from "./src/Pages/PaginaBase/PaginaBase";
+import PaginaBase from "./Pages/PaginaBase/PaginaBase";
 
 export default function RoutesPrincipal() {
     return (

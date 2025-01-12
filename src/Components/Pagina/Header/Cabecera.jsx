@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import LinkCabecera from "../LinkCabecera/LinkCabecera";
+import sytle from "./header.module.css"
 
 export default function Cabecera() {
     const [estado, setEstado] = useState(true);
@@ -9,9 +10,9 @@ export default function Cabecera() {
     };
 
     return (
-        <header>
-            <img src="./img/Logo.png" />
-            <nav>
+        <header className={sytle.header}>
+            <img src="./img/Logo.png" className={sytle.header_logo}/>
+            <nav className={sytle.header_nav}>
                 <LinkCabecera
                     url={"./"}
                     estado={estado}

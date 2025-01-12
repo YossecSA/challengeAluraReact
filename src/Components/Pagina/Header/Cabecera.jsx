@@ -22,7 +22,7 @@ export default function Cabecera() {
                 </LinkCabecera>
 
                 <LinkCabecera
-                    url={"./registro"}
+                    url={"./subirvideo"}
                     estado={!estado}
                     onClick={() => cambiarEstado(false)}
                 >

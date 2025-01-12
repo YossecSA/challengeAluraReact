@@ -23,8 +23,8 @@ export default function Cabecera() {
 
                 <LinkCabecera
                     url={"./registro"}
-                    estado={estado}
-                    onClick={() => cambiarEstado(true)}
+                    estado={!estado}
+                    onClick={() => cambiarEstado(false)}
                 >
                     NUEVO VIDEO
                 </LinkCabecera>

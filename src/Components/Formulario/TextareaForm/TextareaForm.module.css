@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #fff;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.textarea {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 3px solid rgba(38, 38, 38, 1);
+    border-radius: 10px;
+    background-color: rgba(25, 25, 25, 1);
+    color: rgba(165, 165, 165, 1);
+    resize: none; /* Evita que el usuario cambie el tamaño del textarea */
+    height: 100px; /* Altura predeterminada */
+    line-height: 1.5;
+}
+
+.textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+/* Estilos para el estado de error */
+.labelError {
+    color: red; /* Cambia el color del label a rojo */
+}
+
+.textareaError {
+    border-color: red; /* Cambia el borde del textarea a rojo */
+    color: red; /* Cambia el texto del textarea a rojo */
+}
+
+.textarea::placeholder {
+    color: rgba(165, 165, 165, 1);
+}
+
+.textareaError::placeholder {
+    color: red; /* Cambia el placeholder a rojo en caso de error */
+}

@@ -1,7 +1,37 @@
 {
-    "categories": [
-        { "id": 1, "value": "tech", "label": "Tecnología" },
-        { "id": 2, "value": "health", "label": "Salud" },
-        { "id": 3, "value": "sports", "label": "Deportes" }
-    ]
+  "categories": [
+    {
+      "id": 1,
+      "value": "tech",
+      "label": "Tecnología"
+    },
+    {
+      "id": 2,
+      "value": "health",
+      "label": "Salud"
+    },
+    {
+      "id": 3,
+      "value": "sports",
+      "label": "Deportes"
+    }
+  ],
+  "videos": [
+    {
+      "id": "a90f",
+      "titulo": "Prueba web",
+      "categoria": "1",
+      "imagen": "https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/67122b1bc267595fa4a5961a6ba32134.jpg?imageView2/2/w/800/q/70/format/webp",
+      "video": "fsfsa",
+      "descripcion": "adad"
+    },
+    {
+      "id": "3161",
+      "titulo": "Prueba web",
+      "categoria": "3",
+      "imagen": "https://img.kwcdn.com/product/fancy/cef76064-cd80-4130-9236-6a0ab165ea38.jpg?imageView2/2/w/800/q/70/format/webp",
+      "video": "fsfsa",
+      "descripcion": "enla ce de prueba"
+    }
+  ]
 }

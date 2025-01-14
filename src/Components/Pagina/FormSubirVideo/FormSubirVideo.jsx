@@ -4,6 +4,7 @@ import SelectForm from "../../Formulario/SelectForm/SelectForm";
 import TextareaForm from "../../Formulario/TextareaForm/TextareaForm";
 import style from "./FormSubirVideo.module.css";
 import BotonForm from "../../Formulario/BotonesForm/BotonForm";
+import { registro } from "../../../api/api";
 
 export default function FormSubirVideo() {
     const initialFormData = {
@@ -73,7 +74,13 @@ export default function FormSubirVideo() {
         e.preventDefault();
 
         if (validateForm()) {
-            console.log("Datos enviados:", formData);
+            try {
+                const respuesta = registro("/videos", formData);
+                alert("Video registrado exitosamente:", respuesta);
+                handleClear();
+            } catch (error) {
+                alert("Hubo un error al registrar el video:", error);
+            }
         } else {
             console.log("Hay errores en el formulario.");
         }

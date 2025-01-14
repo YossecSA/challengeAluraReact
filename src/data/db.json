@@ -1,0 +1,7 @@
+{
+    "categories": [
+        { "id": 1, "value": "tech", "label": "Tecnología" },
+        { "id": 2, "value": "health", "label": "Salud" },
+        { "id": 3, "value": "sports", "label": "Deportes" }
+    ]
+}

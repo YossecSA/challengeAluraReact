@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import style from "./SelectForm.module.css";
+import { buscar } from "../../../api/api";
 
 export default function SelectForm({
     name,
     labelChild,
     value,
-    options,
     onChange,
     estado, // Indica si hay error (true para error, false para correcto)
 }) {
+
+    const [options, setOptions] = useState([]);
+
+    useEffect(() => {
+        buscar(`/categories`, setOptions)
+    }, []);
     return (
         <div className={style.inputContainer}>
             <label
@@ -27,8 +33,8 @@ export default function SelectForm({
                 <option value="" disabled>
                     {estado ? "Seleccione una opción válida" : "Seleccione una categoría"}
                 </option>
-                {options.map((option, index) => (
-                    <option key={index} value={option.value}>
+                {options.map((option) => (
+                    <option key={option.id} value={option.id}>
                         {option.label}
                     </option>
                 ))}

@@ -2,18 +2,15 @@
   "categories": [
     {
       "id": "1",
-      "value": "tech",
-      "label": "Tecnología"
+      "value": "Tecnología"
     },
     {
       "id": "2",
-      "value": "health",
-      "label": "Salud"
+      "value": "Salud"
     },
     {
       "id": "3",
-      "value": "sports",
-      "label": "Deportes"
+      "value": "Deportes"
     }
   ],
   "videos": [
@@ -48,6 +45,14 @@
       "imagen": "https://img.kwcdn.com/product/fancy/cef76064-cd80-4130-9236-6a0ab165ea38.jpg?imageView2/2/w/800/q/70/format/webp",
       "video": "fsfsa",
       "descripcion": "safsf"
+    },
+    {
+      "id": "7fc4",
+      "titulo": "Prueba web",
+      "categoria": "2",
+      "imagen": "https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/67122b1bc267595fa4a5961a6ba32134.jpg?imageView2/2/w/800/q/70/format/webp",
+      "video": "fsfsa",
+      "descripcion": "a"
     }
   ]
 }

@@ -35,7 +35,7 @@ export default function SelectForm({
                 </option>
                 {options.map((option) => (
                     <option key={option.id} value={option.id}>
-                        {option.label}
+                        {option.value}
                     </option>
                 ))}
             </select>

@@ -14,14 +14,18 @@
     max-width: calc(50% - 1rem);
 }
 
+.containerBoton{
+    display: flex;
+    gap: 1rem;
+}
 @media (max-width: 768px) {
     .row > * {
         flex: 1 1 100%; /* En pantallas pequeñas, cada elemento ocupa el 100% */
         max-width: 100%;
     }
+    .containerBoton{
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
-.containerBoton{
-    display: flex;
-    gap: 1rem;
-}

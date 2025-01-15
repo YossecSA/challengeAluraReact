@@ -1,5 +1,12 @@
-.container{
-    min-height: 100vh;
-    min-width: 100vh;
-    border: 1px solid red;
+.container {
+    min-height: 100vh; /* Ocupa toda la altura visible */
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0;
+    }
 }

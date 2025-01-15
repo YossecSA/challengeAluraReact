@@ -5,8 +5,9 @@
     --border-color: rgb(59, 59, 59);
 }
 .container{
-    border: 2px solid yellow;
     width: 80%;
+    padding: 0 100px;
+    margin: 0 auto; 
 }
 /* Estilo del contenedor del header */
 .headerContainer {
@@ -16,7 +17,6 @@
     gap: 1rem;
     padding: 2rem 0;
     text-align: center;
-    border: 2px solid rebeccapurple;
 }
 
 /* Título principal */
@@ -45,7 +45,7 @@
     align-items: center;
     justify-content: start;
     padding: 1.5rem 0;
-    margin: 1rem 0 ;
+    margin: 1rem 0;
 }
 
 /* Título del artículo */
@@ -54,6 +54,28 @@
     font-size: 1.5rem;
     font-weight: 600;
 }
-.container{
-    padding: 0 100px;
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 1rem; /* Ajusta el padding para un mejor espaciado */
+    }
+    .title{
+        font-size: 1.25rem;
+    }
+    /* Descripción */
+    .description {
+        font-size: 1rem;
+
+    }
+
+    .articleContainer {
+        padding: 1rem 0;
+        margin: .5rem 0;
+    }
+
+    .articleTitle {
+        font-size: 1rem;
+    }
+
 }

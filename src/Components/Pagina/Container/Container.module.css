@@ -4,4 +4,11 @@
     background-color: rgba(0, 0, 0, 0.9);
     justify-content: center;
     align-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0.5rem; /* Reduce el padding en pantallas pequeñas */
+    }
 }

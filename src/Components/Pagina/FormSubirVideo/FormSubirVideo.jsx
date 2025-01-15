@@ -5,6 +5,7 @@ import TextareaForm from "../../Formulario/TextareaForm/TextareaForm";
 import style from "./FormSubirVideo.module.css";
 import BotonForm from "../../Formulario/BotonesForm/BotonForm";
 import { registro } from "../../../api/api";
+import { showErrorMessage, showSuccessMessage, showWarningMessage } from "../../../utils/Alert/Alert";
 
 export default function FormSubirVideo() {
     const initialFormData = {
@@ -76,13 +77,13 @@ export default function FormSubirVideo() {
         if (validateForm()) {
             try {
                 const respuesta = registro("/videos", formData);
-                alert("Video registrado exitosamente:", respuesta);
+                showSuccessMessage('¡Video registrado!', respuesta.mensaje);
                 handleClear();
             } catch (error) {
-                alert("Hubo un error al registrar el video:", error);
+                showErrorMessage('Error al registrar', 'Hubo un problema al registrar el video. Inténtelo nuevamente.');
             }
         } else {
-            console.log("Hay errores en el formulario.");
+            showWarningMessage('Campos incompletos', 'Por favor, complete todos los campos antes de enviar el formulario.');
         }
     };
 

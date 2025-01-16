@@ -80,6 +80,7 @@
         transform: translateY(-20px);
         opacity: 0;
         transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        color: white;
     }
 
     .header_nav.nav_active {
@@ -102,5 +103,6 @@
 
     .header_nav a:hover {
         color: var(--Blue);
+        color: white;
     }
 }

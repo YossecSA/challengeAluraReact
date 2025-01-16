@@ -4,7 +4,12 @@ import InputForm from "../../Formulario/InputForm/InputForm";
 import SelectForm from "../../Formulario/SelectForm/SelectForm";
 import TextareaForm from "../../Formulario/TextareaForm/TextareaForm";
 import { editar } from "../../../api/api";
-import { showSuccessMessage, showErrorMessage, showWarningMessage } from "../../../utils/Alert/Alert";
+import {
+    showSuccessMessage,
+    showErrorMessage,
+    showWarningMessage,
+} from "../../../utils/Alert/Alert";
+import BotonForm from "../../Formulario/BotonesForm/BotonForm";
 
 export default function ModalEditarVideo({ isVisible, onClose, dataToEdit }) {
     if (!isVisible) return null;
@@ -21,9 +26,15 @@ export default function ModalEditarVideo({ isVisible, onClose, dataToEdit }) {
     const initialErrors = {
         titulo: { error: false, message: "El título es obligatorio" },
         categoria: { error: false, message: "Seleccione una categoría" },
-        imagen: { error: false, message: "El enlace de la imagen es obligatorio" },
+        imagen: {
+            error: false,
+            message: "El enlace de la imagen es obligatorio",
+        },
         video: { error: false, message: "El enlace del video es obligatorio" },
-        descripcion: { error: false, message: "La descripción del video es obligatoria" },
+        descripcion: {
+            error: false,
+            message: "La descripción del video es obligatoria",
+        },
     };
 
     const [formData, setFormData] = useState(initialFormData);
@@ -48,38 +59,47 @@ export default function ModalEditarVideo({ isVisible, onClose, dataToEdit }) {
     // Validar campos vacíos
     const validateForm = () => {
         const errors = {};
-        
+
         // Recorremos los datos del formulario
         for (let key in formData) {
             // Verificamos que el valor sea una cadena antes de aplicar trim
-            if (typeof formData[key] === 'string' && formData[key].trim() === '') {
+            if (
+                typeof formData[key] === "string" &&
+                formData[key].trim() === ""
+            ) {
                 errors[key] = `${key} no puede estar vacío`;
             } else if (formData[key] === null || formData[key] === undefined) {
                 errors[key] = `${key} es obligatorio`;
             }
         }
-        
+
         return Object.keys(errors).length === 0;
     };
-    
+
     const handleSave = async (e) => {
         e.preventDefault();
-    
+
         try {
             if (validateForm()) {
-                const response = await editar("/videos", id, formData); 
+                const response = await editar("/videos", id, formData);
                 if (response.success) {
                     showSuccessMessage("¡Éxito!", response.mensaje);
                 } else {
                     showErrorMessage("¡Error!", response.mensaje);
                 }
             } else {
-                showWarningMessage("¡Advertencia!", "Por favor, revise los campos del formulario.");
+                showWarningMessage(
+                    "¡Advertencia!",
+                    "Por favor, revise los campos del formulario."
+                );
             }
         } catch (error) {
             console.error("Error inesperado en handleSave:", error);
-            showErrorMessage("¡Error inesperado!", "Ocurrió un problema al procesar la solicitud.");
-        }finally{
+            showErrorMessage(
+                "¡Error inesperado!",
+                "Ocurrió un problema al procesar la solicitud."
+            );
+        } finally {
             onClose();
         }
     };
@@ -90,16 +110,24 @@ export default function ModalEditarVideo({ isVisible, onClose, dataToEdit }) {
         setErrors(initialErrors);
     };
     return (
-        <div
-            className={style.modalBackdrop}
-            onClick={onClose}
-        >
+        <div className={style.modalBackdrop} onClick={onClose}>
             <div
                 className={style.modalContent}
                 onClick={(e) => e.stopPropagation()} // Evita que el modal se cierre cuando se hace clic dentro de él
             >
+                <button
+                    className={style.closeButton}
+                    onClick={onClose}
+                    aria-label="Cerrar"
+                >
+                    <i className='bx bx-x-circle'></i>
+                </button>
+
                 <h3 className={style.title}>Editar card:</h3>
-                <form onSubmit={handleSave}>
+                <form
+                    onSubmit={handleSave}
+                    className={style.containerFormulario}
+                >
                     <InputForm
                         name="titulo"
                         labelChild="Nombre de Usuario"
@@ -152,11 +180,11 @@ export default function ModalEditarVideo({ isVisible, onClose, dataToEdit }) {
                         value={formData.descripcion}
                         onChange={handleChange}
                     />
-                    <div>
-                        <button type="submit">Guardar</button>
-                        <button type="button" onClick={handleClear}>
-                            Limpiar
-                        </button>
+                    <div className={style.containerFooter}>
+                        <BotonForm type="submit">GUARDAR</BotonForm>
+                        <BotonForm type="clear" onClick={handleClear}>
+                            LIMPIAR
+                        </BotonForm>
                     </div>
                 </form>
             </div>

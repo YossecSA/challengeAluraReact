@@ -8,13 +8,14 @@ export default function SelectForm({
     value,
     onChange,
     estado, // Indica si hay error (true para error, false para correcto)
+    modoEdicion = false, // Propiedad para determinar si es edición
 }) {
-
     const [options, setOptions] = useState([]);
 
     useEffect(() => {
-        buscar(`/categories`, setOptions)
+        buscar(`/categories`, setOptions);
     }, []);
+
     return (
         <div className={style.inputContainer}>
             <label
@@ -27,14 +28,22 @@ export default function SelectForm({
                 id={name}
                 name={name}
                 value={value}
-                className={`${style.input} ${estado ? style.inputError : ""}`}
+                className={`${style.input} ${
+                    modoEdicion ? style.inputEdicion : ""
+                } ${estado ? style.inputError : ""}`}
                 onChange={onChange}
             >
                 <option value="" disabled>
-                    {estado ? "Seleccione una opción válida" : "Seleccione una categoría"}
+                    {estado
+                        ? "Seleccione una opción válida"
+                        : "Seleccione una categoría"}
                 </option>
                 {options.map((option) => (
-                    <option key={option.id} value={option.id}>
+                    <option
+                        key={option.id}
+                        value={option.id}
+                        className={style.option}
+                    >
                         {option.value}
                     </option>
                 ))}

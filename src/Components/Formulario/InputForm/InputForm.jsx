@@ -10,6 +10,7 @@ export default function InputForm({
     onChange,
     estado, // Indica si hay error (true para error, false para correcto)
     mensajeError, // Mensaje del placeholder en caso de error
+    modoEdicion = false, // Propiedad para determinar si es edición
 }) {
     return (
         <div className={style.container}>
@@ -20,7 +21,7 @@ export default function InputForm({
                 {labelChild}
             </label>
             <input
-                className={`${style.input} ${estado ? style.inputError : ""}`}
+                className={`${style.input} ${modoEdicion ? style.inputEdicion : ""} ${estado ? style.inputError : ""}`}
                 type={type}
                 id={name}
                 name={name}

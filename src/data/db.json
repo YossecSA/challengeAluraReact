@@ -15,12 +15,12 @@
   ],
   "videos": [
     {
-      "id": "a90f",
-      "titulo": "Prueba web",
-      "categoria": "1",
-      "imagen": "https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/67122b1bc267595fa4a5961a6ba32134.jpg?imageView2/2/w/800/q/70/format/webp",
-      "video": "fsfsa",
-      "descripcion": "adad"
+      "titulo": "Video de prueba",
+      "categoria": 2,
+      "imagen": "https://link-a-imagen.com",
+      "video": "https://link-a-video.com",
+      "descripcion": "Descripción del video",
+      "id": "a90f"
     },
     {
       "id": "3161",

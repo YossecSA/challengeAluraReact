@@ -8,6 +8,7 @@ export default function TextareaForm({
     placeholder,
     onChange,
     estado, // Indica si hay error (true para error, false para correcto)
+    modoEdicion = false, // Propiedad para determinar si es edición
 }) {
     return (
         <div className={style.container}>
@@ -22,7 +23,7 @@ export default function TextareaForm({
                 name={name}
                 value={value}
                 placeholder={estado ? "Por favor ingrese un valor válido" : placeholder}
-                className={`${style.textarea} ${estado ? style.textareaError : ""}`}
+                className={`${style.textarea} ${modoEdicion ? style.textareaEdicion : ""} ${estado ? style.textareaError : ""}`}
                 onChange={onChange}
             ></textarea>
         </div>

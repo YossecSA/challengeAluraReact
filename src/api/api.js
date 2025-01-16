@@ -12,14 +12,33 @@ export const registro = async (url, datos) => {
         const respuesta = await api.post(url, datos);
 
         if (respuesta.status === 200) {
-            console.log("Respuesta del servidor:", respuesta.data);
-            return { mensaje: "Video registrado correctamente" }; 
+            return { mensaje: "Video registrado correctamente" };
         } else {
             return { mensaje: "Hubo un problema al registrar el video" };
         }
-        
     } catch (error) {
         console.error("Error al enviar los datos:", error);
         return { mensaje: "Error al registrar el video" };
+    }
+};
+
+export const editar = async (url, id, datos) => {
+    try {
+        const respuesta = await api.put(`${url}/${id}`, datos);
+
+        if (respuesta.status === 200) {
+            return { mensaje: "Video editado correctamente", success: true };
+        } else {
+            return {
+                mensaje: "Hubo un problema al editar el video",
+                success: false,
+            };
+        }
+    } catch (error) {
+        console.error("Error al editar los datos:", error);
+        return {
+            mensaje: `Error al editar el video: ${error.message}`,
+            success: false,
+        };
     }
 };

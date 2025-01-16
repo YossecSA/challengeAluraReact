@@ -10,18 +10,18 @@
     color: #fff;
     font-size: 20px;
     text-transform: capitalize;
+    text-align: start;
 }
 
 .textarea {
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 3px solid rgba(38, 38, 38, 1);
+    font-size: 1.15rem;
+    border: 3px solid rgba(38, 38, 38, 1); /* Borde por defecto (gris oscuro) */
     border-radius: 10px;
-    background-color: rgba(25, 25, 25, 1);
+    padding: 14px 10px;
+    background-color: transparent;
     color: rgba(165, 165, 165, 1);
-    resize: none; /* Evita que el usuario cambie el tamaño del textarea */
-    height: 100px; /* Altura predeterminada */
-    line-height: 1.5;
+    width: 100%;
+    resize: vertical; /* Permite redimensionar el textarea verticalmente */
 }
 
 .textarea:focus {
@@ -30,20 +30,25 @@
     outline: none;
 }
 
+.textarea::placeholder {
+    color: rgba(165, 165, 165, 1);
+}
+
 /* Estilos para el estado de error */
 .labelError {
     color: red; /* Cambia el color del label a rojo */
 }
 
 .textareaError {
-    border-color: red; /* Cambia el borde del textarea a rojo */
+    border-color: red; /* Cambia el borde del textarea a rojo en caso de error */
     color: red; /* Cambia el texto del textarea a rojo */
 }
 
-.textarea::placeholder {
-    color: rgba(165, 165, 165, 1);
+.textareaError::placeholder {
+    color: red; /* Cambia el color del placeholder a rojo */
 }
 
-.textareaError::placeholder {
-    color: red; /* Cambia el placeholder a rojo en caso de error */
+/* Estilo para cuando el textarea está en modo de edición (borde azul) */
+.textareaEdicion {
+    border-color: #2271D1;
 }

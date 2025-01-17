@@ -1,0 +1,35 @@
+/* Contenedor de la publicidad */
+.container {
+    width: 100%; /* Ajustar a cualquier tamaño */
+    max-width: 647.794px; /* Limitar ancho máximo */
+    height: auto; /* Ajustar altura dinámica */
+    aspect-ratio: 16 / 9; /* Mantener proporciones */
+    border: 5px solid #6BD1FF;
+    border-radius: 1rem;
+    overflow: hidden;
+    z-index: 2;
+    display: flex; /* Centrar contenido en móviles */
+    justify-content: center;
+    align-items: center;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Media Queries */
+@media (max-width: 768px) { /* Tablets */
+    .container {
+        max-width: 90%; /* Reducir el tamaño de la publicidad */
+        border-width: 3px; /* Reducir grosor del borde */
+    }
+}
+
+@media (max-width: 480px) { /* Móviles */
+    /* Ocultar publicidad en móviles */
+    .container {
+        display: none; /* Se oculta el contenedor de la publicidad */
+    }
+}

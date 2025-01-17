@@ -1,0 +1,92 @@
+/* Estilos generales */
+.titulo {
+    color: #f5f5f5;
+    font-size: 46px;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 20px; /* Espaciado para no pegar el texto superior */
+}
+
+.descripcion {
+    color: #f5f5f5;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: normal;
+    width: 100%; /* Se ajusta al ancho del contenedor */
+    max-width: 100%; /* Evita que se salga */
+    box-sizing: border-box; /* Para no romper el diseño */
+    word-wrap: break-word; /* Para evitar desbordamiento de palabras */
+}
+
+.container {
+    z-index: 2;
+    width: 100%; /* Ajusta al tamaño de la pantalla */
+    max-width: 647.794px; /* Máximo para escritorios grandes */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 20px; /* Añadir espacio a los lados */
+}
+
+.botonBanner {
+    display: flex;
+    padding: 1rem;
+    width: 100%; /* Asegura que el botón se ajuste al ancho disponible */
+    max-width: 350px; /* Máximo en pantallas grandes */
+    border-radius: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    background-color: rgba(107, 209, 255, 1);
+    color: var(----color-gray-light, #f5f5f5);
+    text-align: center;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+/* Contenedor de la info */
+.containerInfo {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+}
+
+/* Ajustes para pantallas pequeñas (tabletas y móviles) */
+@media (max-width: 768px) { /* Tablets */
+    .container {
+        max-width: 90%; /* Reducir el tamaño máximo */
+        padding: 10px; /* Añadir espacio interior */
+    }
+    .titulo {
+        font-size: 36px; /* Reducir tamaño del título */
+    }
+    .descripcion {
+        font-size: 16px; /* Reducir tamaño de la descripción */
+    }
+    .botonBanner{
+    padding: .8rem;
+    max-width: 300px; 
+    font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) { /* Móviles */
+    .container {
+        max-width: 100%; /* Ocupa todo el ancho disponible */
+        padding: 10px; /* Añadir más espacio interior */
+        aspect-ratio: auto; /* Eliminar proporciones fijas */
+    }
+    .titulo {
+        font-size: 28px; /* Reducir aún más el tamaño del título */
+    }
+    .descripcion {
+        font-size: 14px; /* Reducir aún más el tamaño de la descripción */
+    }
+    .botonBanner {
+        font-size: 24px; /* Reducir tamaño del texto del botón */
+        width: 80%; /* Hacer que el botón ocupe menos ancho */
+        margin: 0 auto; /* Centrar el botón */
+    }
+}

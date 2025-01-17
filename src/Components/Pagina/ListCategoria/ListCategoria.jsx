@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./ListCategoria.module.css";
+import "./ListCategoria.css";
 import Categorias from "../Categorias/Categorias";
 import { showConfirmationDialog } from "../../../utils/Alert/Alert";
 import { buscar } from "../../../api/api";
@@ -39,7 +39,6 @@ export default function ListCategoria() {
         <section className="main__listCard">
             <div className="container">
                 {categorias.map((categoria) => {
-                    console.log(categoria)
                     return (
                         <Categorias
                             datos={categoria}

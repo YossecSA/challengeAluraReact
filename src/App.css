@@ -79,3 +79,6 @@ input::placeholder, textarea::placeholder {
     color: inherit;
     opacity: 1;
 }
+:root{
+    font-family: "Roboto", serif;
+}

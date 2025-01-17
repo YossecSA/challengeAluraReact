@@ -42,3 +42,23 @@ export const editar = async (url, id, datos) => {
         };
     }
 };
+export const eliminar = async (url, id) => {
+    try {
+        const respuesta = await api.delete(`${url}/${id}`);
+
+        if (respuesta.status === 200) {
+            return { mensaje: "Video eliminado correctamente", success: true };
+        } else {
+            return {
+                mensaje: "Hubo un problema al eliminar el video",
+                success: false,
+            };
+        }
+    } catch (error) {
+        console.error("Error al eliminar el video:", error);
+        return {
+            mensaje: `Error al eliminar el video: ${error.message}`,
+            success: false,
+        };
+    }
+};

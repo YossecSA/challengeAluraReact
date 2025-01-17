@@ -40,3 +40,20 @@ export const showWarningMessage = (title, text) => {
         confirmButtonText: 'Aceptar',
     });
 };
+
+/**
+ * Muestra un cuadro de confirmación con SweetAlert2.
+ * @param {string} title - Título del mensaje.
+ * @param {string} text - Texto adicional para detallar la confirmación.
+ * @returns {Promise<boolean>} - Resuelve a `true` si el usuario confirma, `false` si cancela.
+ */
+export const showConfirmationDialog = (title, text) => {
+    return Swal.fire({
+        title: title || '¿Estás seguro?',
+        text: text || 'Esta acción no se puede deshacer.',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Sí, continuar',
+        cancelButtonText: 'Cancelar',
+    }).then((result) => result.isConfirmed);
+};

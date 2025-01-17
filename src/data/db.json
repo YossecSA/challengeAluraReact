@@ -2,15 +2,18 @@
   "categories": [
     {
       "id": "1",
-      "value": "Tecnología"
+      "value": "FRONT END",
+      "color": "#6BD1FF"
     },
     {
       "id": "2",
-      "value": "Salud"
+      "value": "BACK END",
+      "color": "#00C86F"
     },
     {
       "id": "3",
-      "value": "Deportes"
+      "value": "INNOVACIÓN Y GESTIÓN",
+      "color": "#FFBA05"
     }
   ],
   "videos": [

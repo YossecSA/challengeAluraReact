@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ModalEditarVideo from '../../Components/Modal/EditarVideo/ModalEditarVideo'
 import Banner from '../../Components/Pagina/Banner/Banner';
+import ListCategoria from '../../Components/Pagina/ListCategoria/ListCategoria';
 
 export default function Inicio() {
   const [modalVisible, setModalVisible] = useState(false);
@@ -28,6 +29,7 @@ export default function Inicio() {
     <div>
       <Banner></Banner>
       <h2>Inicio</h2>
+      <ListCategoria  />
       <button onClick={abrirModal}>Editar</button>
       <ModalEditarVideo
         isVisible={modalVisible}

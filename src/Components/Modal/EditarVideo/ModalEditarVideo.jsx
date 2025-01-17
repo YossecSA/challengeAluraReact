@@ -56,13 +56,10 @@ export default function ModalEditarVideo({ isVisible, onClose, dataToEdit }) {
         }
     };
 
-    // Validar campos vacíos
     const validateForm = () => {
         const errors = {};
 
-        // Recorremos los datos del formulario
         for (let key in formData) {
-            // Verificamos que el valor sea una cadena antes de aplicar trim
             if (
                 typeof formData[key] === "string" &&
                 formData[key].trim() === ""
@@ -104,7 +101,6 @@ export default function ModalEditarVideo({ isVisible, onClose, dataToEdit }) {
         }
     };
 
-    // Manejar el evento de "Limpiar"
     const handleClear = () => {
         setFormData(initialFormData);
         setErrors(initialErrors);
@@ -113,7 +109,7 @@ export default function ModalEditarVideo({ isVisible, onClose, dataToEdit }) {
         <div className={style.modalBackdrop} onClick={onClose}>
             <div
                 className={style.modalContent}
-                onClick={(e) => e.stopPropagation()} // Evita que el modal se cierre cuando se hace clic dentro de él
+                onClick={(e) => e.stopPropagation()}
             >
                 <button
                     className={style.closeButton}

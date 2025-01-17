@@ -10,11 +10,11 @@ export default function ListCategoria() {
 
     useEffect(() => {
         buscar("/categories", setCategorias);
-    }, []);
+    }, [categorias]);
 
     useEffect(() => {
         buscar("/videos", setVideos);
-    }, []);
+    }, [videos]);
 
     const eliminarVideo = async (id) => {
         const confirmado = await showConfirmationDialog(

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./ListCategoria.css";
 import Categorias from "../Categorias/Categorias";
-import { showConfirmationDialog } from "../../../utils/Alert/Alert";
-import { buscar } from "../../../api/api";
+import { showConfirmationDialog, showSuccessMessage } from "../../../utils/Alert/Alert";
+import { buscar, eliminar } from "../../../api/api";
 
 export default function ListCategoria() {
     const [categorias, setCategorias] = useState([]);

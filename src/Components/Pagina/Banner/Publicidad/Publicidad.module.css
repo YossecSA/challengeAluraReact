@@ -1,14 +1,13 @@
-/* Contenedor de la publicidad */
 .container {
-    width: 100%; /* Ajustar a cualquier tamaño */
-    max-width: 647.794px; /* Limitar ancho máximo */
-    height: auto; /* Ajustar altura dinámica */
-    aspect-ratio: 16 / 9; /* Mantener proporciones */
+    width: 100%; 
+    max-width: 647.794px;
+    height: auto; 
+    aspect-ratio: 16 / 9; 
     border: 5px solid #6BD1FF;
     border-radius: 1rem;
     overflow: hidden;
     z-index: 2;
-    display: flex; /* Centrar contenido en móviles */
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -20,16 +19,15 @@
 }
 
 /* Media Queries */
-@media (max-width: 768px) { /* Tablets */
+@media (max-width: 768px) {
     .container {
-        max-width: 90%; /* Reducir el tamaño de la publicidad */
-        border-width: 3px; /* Reducir grosor del borde */
+        max-width: 90%;
+        border-width: 3px;
     }
 }
 
-@media (max-width: 480px) { /* Móviles */
-    /* Ocultar publicidad en móviles */
+@media (max-width: 650px) { 
     .container {
-        display: none; /* Se oculta el contenedor de la publicidad */
+        display: none; 
     }
 }

@@ -1,10 +1,9 @@
-/* Estilos generales */
 .titulo {
     color: #f5f5f5;
     font-size: 46px;
     font-weight: 400;
     line-height: normal;
-    margin-bottom: 20px; /* Espaciado para no pegar el texto superior */
+    margin-bottom: 20px; 
 }
 
 .descripcion {
@@ -12,27 +11,27 @@
     font-size: 18px;
     font-weight: 300;
     line-height: normal;
-    width: 100%; /* Se ajusta al ancho del contenedor */
-    max-width: 100%; /* Evita que se salga */
-    box-sizing: border-box; /* Para no romper el diseño */
-    word-wrap: break-word; /* Para evitar desbordamiento de palabras */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .container {
     z-index: 2;
-    width: 100%; /* Ajusta al tamaño de la pantalla */
-    max-width: 647.794px; /* Máximo para escritorios grandes */
+    width: 100%; 
+    max-width: 647.794px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding: 0 20px; /* Añadir espacio a los lados */
+    gap: 1rem;
+    padding: 0 20px;
 }
 
 .botonBanner {
     display: flex;
     padding: 1rem;
-    width: 100%; /* Asegura que el botón se ajuste al ancho disponible */
-    max-width: 350px; /* Máximo en pantallas grandes */
+    width: 100%;
+    max-width: 350px;
     border-radius: 1rem;
     justify-content: center;
     align-items: center;
@@ -46,24 +45,23 @@
     text-transform: uppercase;
 }
 
-/* Contenedor de la info */
 .containerInfo {
     display: flex;
     gap: 0.5rem;
     flex-direction: column;
 }
 
-/* Ajustes para pantallas pequeñas (tabletas y móviles) */
-@media (max-width: 768px) { /* Tablets */
+@media (max-width: 768px) { 
     .container {
-        max-width: 90%; /* Reducir el tamaño máximo */
-        padding: 10px; /* Añadir espacio interior */
+        max-width: 90%;
+        padding: 10px;
+        flex-direction: column-reverse;
     }
     .titulo {
-        font-size: 36px; /* Reducir tamaño del título */
+        font-size: 36px; 
     }
     .descripcion {
-        font-size: 16px; /* Reducir tamaño de la descripción */
+        font-size: 16px;
     }
     .botonBanner{
     padding: .8rem;
@@ -72,21 +70,24 @@
     }
 }
 
-@media (max-width: 480px) { /* Móviles */
+@media (max-width: 480px) {
     .container {
-        max-width: 100%; /* Ocupa todo el ancho disponible */
-        padding: 10px; /* Añadir más espacio interior */
-        aspect-ratio: auto; /* Eliminar proporciones fijas */
+        max-width: 100%;
+        padding: 10px; 
+        aspect-ratio: auto;
     }
     .titulo {
-        font-size: 28px; /* Reducir aún más el tamaño del título */
+        font-size: 28px;
+        text-align: center;
     }
     .descripcion {
-        font-size: 14px; /* Reducir aún más el tamaño de la descripción */
+        font-size: 14px;
+        text-align: center;
     }
     .botonBanner {
-        font-size: 24px; /* Reducir tamaño del texto del botón */
-        width: 80%; /* Hacer que el botón ocupe menos ancho */
-        margin: 0 auto; /* Centrar el botón */
+        font-size: 24px; 
+        width: 60%; 
+        margin: 0 auto;
+        padding: .5rem;
     }
 }

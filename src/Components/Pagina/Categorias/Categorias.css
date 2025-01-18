@@ -4,7 +4,7 @@
     gap: 2rem;
 }
 .listCard__title {
-    width: 432px;
+    width: 410px;
     height: 70px;
     border-radius: 15px;
     display: flex;
@@ -22,19 +22,23 @@
     flex-wrap: wrap;
     align-items: center;
 }
-
-@media (min-width: 768px) and (max-width: 1024px) {
+/* .listCard__card > .card {
+    flex: 1 1 calc(33.333% - 1rem); 
+    max-width: 410px;
+    margin-bottom: 1rem;
+} */
+@media (max-width: 1295px) {
     .listCard__card {
         display: flex;
         flex-wrap: nowrap;
-        overflow-x: scroll;
+        overflow-x: auto;
         gap: 1rem;
         scroll-behavior: smooth;
     }
 
-    .listCard__card > * {
-        flex: 0 0 calc(50% - 1rem);
-        max-width: calc(50% - 1rem);
+    .listCard__card > .card  {
+        flex: 0 0 calc(33.5% - 1rem);
+        max-width: calc(33.5% - 1rem);
         margin-bottom: 1rem;
     }
 
@@ -52,16 +56,47 @@
         background: rgba(34, 113, 209, 0.17);
         border-radius: 100px;
     }
+
 }
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
     .listCard__card {
         display: flex;
         flex-wrap: nowrap;
-        overflow-x: scroll;
+        overflow-x: auto;
         gap: 1rem;
         scroll-behavior: smooth;
     }
-    .listCard__card > * {
+
+    .listCard__card > .card  {
+        flex: 0 0 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+        /* margin-bottom: 1rem; */
+    }
+
+    .listCard__card::-webkit-scrollbar {
+        height: 10px;
+    }
+
+    .listCard__card::-webkit-scrollbar-thumb {
+        background: #2271d1;
+        border-radius: 100px;
+        border: 3px solid rgba(34, 113, 209, 0.17) !important;
+    }
+
+    .listCard__card::-webkit-scrollbar-track {
+        background: rgba(34, 113, 209, 0.17);
+        border-radius: 100px;
+    }
+}
+@media (max-width: 600px) {
+    .listCard__card {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 1rem;
+        scroll-behavior: smooth;
+    }
+    .listCard__card > .card {
         flex: 0 0 calc(100% - 1rem);
         max-width: calc(100% - 1rem);
         margin-bottom: 1rem;
@@ -80,5 +115,8 @@
     .listCard__card::-webkit-scrollbar-track {
         background: rgba(34, 113, 209, 0.17);
         border-radius: 100px;
+    }
+    .listCard__title {
+        width: 286px;
     }
 }

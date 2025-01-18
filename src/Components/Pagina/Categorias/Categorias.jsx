@@ -18,7 +18,6 @@ export default function Categorias(props) {
                     </div>
                     <div className="listCard__card">
                         {datosVideos.map((video) => {
-                            console.log(video)
                             return (
                                 <Card
                                     datos={video}
